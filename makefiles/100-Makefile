@@ -2,13 +2,12 @@ CC=gcc
 SRC=main.c school.c
 OBJ=$(SRC:%.c=%.o)
 NAME=school
-RM=rm
 CFLAGS=-Wall -Werror -Wextra -pedantic
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $^ -o $@
+$(NAME): $(OBJ) m.h
+	$(CC) $^ -o $@
 
 clean:
 	$(RM) -f *~ $(NAME)
