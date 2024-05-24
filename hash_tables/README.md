@@ -1,6 +1,6 @@
 # Hash Tables Advanced
 
-### 0. $ht['Betty'] = 'Cool'
+#### 0. $ht['Betty'] = 'Cool'
 In [PHP](https://www.php.net/manual/en/intro-whatis.php), hash tables are ordered. Wait… WAT? How is this even possible?
 
 **Before you continue**, please take a moment to think about it: how you would implement it if you were asked to during an interview or a job. What data structures would you use? How would it work?
@@ -109,7 +109,7 @@ julien@ubuntu:~/Hash tables$ ./sht
 {'z': '4', 'y': '0', 'n': '5', 'm': '7', 'j': '1', 'c': '2', 'b': '3', 'a': '6'}
 julien@ubuntu:~/Hash tables$ 
 ```
-
+![php](https://github.com/O-01/atlas-low_level_programming/assets/122712385/a7fddb3b-eeff-4fc7-a31c-263743e3aee6)
 #
 #### Repo:
 - GitHub repository: `atlas-low_level_programming`
