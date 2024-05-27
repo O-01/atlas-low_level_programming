@@ -159,7 +159,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 void shash_table_delete(shash_table_t *ht)
 {
 	shash_node_t *delete = NULL;
-	
+
 	if (!ht)
 		return;
 	for (delete = ht->shead; delete; delete = ht->shead)
