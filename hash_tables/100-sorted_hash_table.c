@@ -10,9 +10,10 @@ void shash_table_delete(shash_table_t *ht);
 #define KEY_INDEX(k, ht) (hash_djb2((const unsigned char *)k) % ht->size)
 
 /**
- * shash_table_create - .
- * @size: .
- * Return: .
+ * shash_table_create - allocate memory for sorted hash table and collision
+ *                      chaining array
+ * @size: size of sorted hash table
+ * Return: pointer to new sorted hash table
 */
 shash_table_t *shash_table_create(unsigned long int size)
 {
@@ -34,11 +35,11 @@ shash_table_t *shash_table_create(unsigned long int size)
 
 
 /**
- * shash_table_set - adds element to sorted hash table
- * @ht: .
- * @key: .
- * @value: .
- * Return: .
+ * shash_table_set - adds element to sorted hash table at appropriate position
+ * @ht: sorted hash table
+ * @key: key for new element
+ * @value: value corresponding to key
+ * Return: 1 upon success, 0 upon NULL input or memory allocation failure
 */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
@@ -93,10 +94,11 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 }
 
 /**
- * shash_table_get - .
- * @ht: .
- * @key: .
- * Return: .
+ * shash_table_get - grabs value at key within sorted hash table
+ * @ht: sorted hash table
+ * @key: key within table whose value to be found
+ * Return: value corresponding to key, NULL upon allocation failure or
+ *         upon key node not present
 */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
@@ -115,8 +117,9 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 }
 
 /**
- * shash_table_print - .
- * @ht: .
+ * shash_table_print - prints key/value pairs within sorted hash table from
+ *                     head node to tail node
+ * @ht: sorted hash table
 */
 void shash_table_print(const shash_table_t *ht)
 {
@@ -134,8 +137,9 @@ void shash_table_print(const shash_table_t *ht)
 }
 
 /**
- * shash_table_print_rev - .
- * @ht: .
+ * shash_table_print_rev - prints key/value pairs within sorted hash table from
+ *                         tail node to head node (reverse)
+ * @ht: sorted hash table
 */
 void shash_table_print_rev(const shash_table_t *ht)
 {
@@ -153,8 +157,9 @@ void shash_table_print_rev(const shash_table_t *ht)
 }
 
 /**
- * shash_table_delete - .
- * @ht: .
+ * shash_table_delete - free all allocated memory associated with sorted hash
+ *                      table
+ * @ht: sorted hash table
 */
 void shash_table_delete(shash_table_t *ht)
 {
