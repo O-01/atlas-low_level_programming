@@ -14,6 +14,8 @@ int interpolation_search(int *array, size_t size, int value)
 
 	if (!array || !size)
 		return (-1);
+	if (array[lo] == value)
+		return (printf("Value checked array[%lu] = [%u]\n", lo, array[lo]), lo);
 	for (pos = POS(array, lo, hi, value);
 		lo < hi && value >= array[lo] && value <= array[hi];
 		pos = POS(array, lo, hi, value))
