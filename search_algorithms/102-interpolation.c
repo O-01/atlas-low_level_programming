@@ -16,11 +16,11 @@ int interpolation_search(int *array, size_t size, int value)
 		return (-1);
 	for (pos = POS(array, lo, hi, value);
 		lo < hi && value >= array[lo] && value <= array[hi];
-		lo++, pos = POS(array, lo, hi, value))
+		pos = POS(array, lo, hi, value))
 	{
 		printf("Value checked array[%lu] = [%d]\n", pos, array[pos]);
 		if (array[pos] < value)
-			lo = pos;
+			lo = pos + 1;
 		else if (array[pos] > value)
 			hi = pos;
 		else
