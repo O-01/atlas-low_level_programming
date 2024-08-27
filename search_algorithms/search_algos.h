@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MIN(x, y) ((x) < (y) ? (x) : (y))
 #define POS(a, l, h, v) \
 	(l + (((double)((h) - (l)) / ((a)[(h)] - (a)[(l)])) * ((v) - (a)[(l)])))
 
